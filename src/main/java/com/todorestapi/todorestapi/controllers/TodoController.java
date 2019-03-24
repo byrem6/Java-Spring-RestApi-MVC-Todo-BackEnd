@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(Consts.BASE_TODO_URL)
+@CrossOrigin
 public class TodoController {
 
     private TodoRepository todoRepository;
@@ -21,7 +22,7 @@ public class TodoController {
         this.todoRepository = todoRepository;
     }
 
-    @CrossOrigin
+
     @GetMapping("/{Id}")
     @ResponseStatus(HttpStatus.OK)
     public List<Todo> getAllTodos(@PathVariable Long Id){
@@ -29,7 +30,7 @@ public class TodoController {
     }
 
 
-    @CrossOrigin
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Todo saveTodo(@RequestBody Todo todo){
@@ -37,7 +38,7 @@ public class TodoController {
     }
 
 
-    @CrossOrigin
+
     @DeleteMapping("/{Id}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteTodoById(@PathVariable Long Id){
@@ -47,7 +48,6 @@ public class TodoController {
 
 
     @Transactional
-    @CrossOrigin
     @PatchMapping("/{Id}")
     @ResponseStatus(HttpStatus.OK)
     public void CheckTodoById(@PathVariable Long Id,@RequestBody Todo todo){
