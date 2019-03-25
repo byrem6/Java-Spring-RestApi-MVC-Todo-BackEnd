@@ -9,7 +9,9 @@ import com.todorestapi.todorestapi.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 @Component
 public class BootStrapWithTempData implements CommandLineRunner {
@@ -29,25 +31,28 @@ public class BootStrapWithTempData implements CommandLineRunner {
 
 
         // TODO TEMP DATA ADD
+
+        Calendar date =  new GregorianCalendar();
+
         Todo t1 = new Todo();
         t1.setTitle("Todo 1");
-        t1.setExpires(new Date());
-        t1.setCreateDate(new Date(2019,01,01));
+        t1.setExpires(date.getTime());
+        t1.setCreateDate(date.getTime());
         t1.setList_Id((long)1);
         t1.setCompleted(false);
 
 
         Todo t2 = new Todo();
         t2.setTitle("Todo 2");
-        t2.setExpires(new Date());
-        t2.setCreateDate(new Date(2019,01,01));
+        t2.setExpires(date.getTime());
+        t2.setCreateDate(date.getTime());
         t2.setList_Id((long)2);
         t2.setCompleted(false);
 
         Todo t3 = new Todo();
         t3.setTitle("Todo 3");
-        t3.setExpires(new Date());
-        t3.setCreateDate(new Date(2019,01,01));
+        t3.setExpires(date.getTime());
+        t3.setCreateDate(date.getTime());
         t3.setList_Id((long)1);
         t3.setCompleted(false);
 
